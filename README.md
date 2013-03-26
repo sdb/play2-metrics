@@ -18,7 +18,7 @@ Or, if you want to use a snapshot version:
 
     resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
 
-    libraryDependencies += "com.github.sdb" %% "play2-metrics" % "0.1.0-SNAPSHOT"
+    libraryDependencies += "com.github.sdb" %% "play2-metrics" % "0.2.0-SNAPSHOT"
 
 Register the plugin by adding it to `conf/play.plugins`:
 
@@ -118,6 +118,7 @@ An example `Procfile`:
 | play2-metrics | Play        | Metrics   |
 | ------------- | ----------- | --------- |
 | 0.1.0         | 2.1.0       | 2.2.0     |
+| 0.2.0         | 2.1.0       | 2.2.0     |
 
 ## Licence
 
