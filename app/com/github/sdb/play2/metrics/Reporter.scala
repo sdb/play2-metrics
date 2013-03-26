@@ -53,7 +53,7 @@ private object Reporter extends ReporterConfigurationSupport {
   }
 
   lazy val graphite: (String, Configuration) => Reporter = (name, config) =>
-    Graphite(name, config, config.period, config.unit, config.host, config.port, config.getString("prefix"))
+    Graphite(name, config, config.period, config.unit, config.host("localhost"), config.port(2003), config.getString("prefix"))
 
 
   case class Ganglia(name: String, configuration: Configuration, period: Long, unit: TimeUnit, host: String, port: Int) extends DynamicReporter {
@@ -66,5 +66,5 @@ private object Reporter extends ReporterConfigurationSupport {
   }
 
   lazy val ganglia: (String, Configuration) => Reporter = (name, config) =>
-    Ganglia(name, config, config.period, config.unit, config.host, config.port)
+    Ganglia(name, config, config.period, config.unit, config.host("localhost"), config.port(8649))
 }

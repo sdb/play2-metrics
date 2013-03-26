@@ -8,7 +8,8 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 
 libraryDependencies ++= Seq(
   "play" %% "play" % "2.1.0" % "provided",
-  "com.yammer.metrics" % "metrics-core" % "2.2.0" % "provided"
+  "com.yammer.metrics" % "metrics-core" % "2.2.0" % "provided",
+  "org.specs2" %% "specs2" % "1.14" % "test"
 )
 
 scalaSource in Compile <<= baseDirectory { (base) => base / "app" }
@@ -16,6 +17,8 @@ scalaSource in Compile <<= baseDirectory { (base) => base / "app" }
 resourceDirectory in Compile <<= baseDirectory { (base) => base / "conf" }
 
 scalaSource in Test <<= baseDirectory { (base) => base / "test" }
+
+javacOptions ++= Seq("-source", "1.6", "-target", "1.6")
 
 licenses := Seq("Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 

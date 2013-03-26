@@ -10,8 +10,8 @@ private trait ReporterConfigurationSupport {
     def period = conf.getInt("period") getOrElse 1
     def enabled = conf.getBoolean("enabled") getOrElse false
     def unit = conf.getString("unit", Some(Set((TimeUnit.values.toSeq map(_.toString)):_*))) map(TimeUnit.valueOf(_)) getOrElse TimeUnit.MINUTES
-    def host = conf.getString("host") getOrElse "localhost"
-    def port = conf.getInt("port") getOrElse 2003
+    def host(default: => String) = conf.getString("host") getOrElse default
+    def port(default: => Int) = conf.getInt("port") getOrElse default
     def path(name: String) = new File(conf.getString(name) getOrElse ".")
   }
 
