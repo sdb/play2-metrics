@@ -1,5 +1,7 @@
 # Metrics plugin for Play Framework 2
 
+The development of this library has been discontinued.
+
 This plugin makes it easier to use [Coda Hale Metrics](http://metrics.codahale.com) in a [Play 2](http://www.playframework.com) application by
 providing a mechanism to configure metrics reporting using Play's default configuration support.
 
